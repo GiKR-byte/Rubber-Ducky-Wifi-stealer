@@ -1,5 +1,5 @@
 # Rubber Ducky Wifi stealer
- This Script will steal all the wifi passwords on a computer and send them to you via outlook. This script was only tested on WIN10
+ This Script will steal all the wifi passwords on a computer and send them to you via outlook. This script was only tested on WIN10 but it should also work on WIN7 to WIN11.
 
 WARNING: ONLY USE THIS SCRRIPT ON A DEVICE, WHERE YOU ARE ALLOWED TO USE IT ON!
 
